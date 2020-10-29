@@ -16,9 +16,13 @@ const forecast = (latitude, longitude, callback) => {
 
     if( error ) {
         callback('Unable to connect to weather API')
-    } else if (response.body.error) {
+    } 
+    
+    else if (response.body.error) {
         callback('Error: invalid location passed to weather API');
-    } else { 
+    } 
+    
+    else { 
         const currentWeather = response.body.current;
         callback(undefined, `it is currently ${currentWeather.temperature} degrees`);
     }
